@@ -1,0 +1,32 @@
+<!-- TEMPLATE BASE-->
+{% extends 'base_userscontrol.html' %}
+
+<!-- TITULO DE LA PAGINA-->
+{% block titulo %} No Usario {% endblock %}
+
+<!-- DESCRIPCION DE LA PAGINA-->
+{% block description %}
+No usuario.
+{% endblock description %}
+
+<!-- EL ENCABEZADO -->
+{% block encabezado %} 
+<hgroup> 
+<h2>Usuaurio no activo</h2>
+</hgroup>
+{% endblock %}
+
+
+<!-- CONTENIDO-->
+{% block contenido %}
+
+		<article  class="grid1">
+				<p>El usuario y la contraseña no coinciden o no existen.</p>		
+		</article>
+
+{% endblock %}
+
+<!-- FOOTER -->
+{% block footer %}
+	<p>Pie de página</p>
+{% endblock %}

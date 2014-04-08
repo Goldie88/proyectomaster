@@ -1,0 +1,40 @@
+<!-- TEMPLATE BASE-->
+{% extends 'base_userscontrols.html' %}
+
+<!-- TITULO DE LA PAGINA-->
+{% block titulo %} New User {% endblock %}
+
+<!-- DESCRIPCION DE LA PAGINA-->
+{% block description %}
+New Activo
+{% endblock description %}
+
+
+<!-- EL ENCABEZADO -->
+{% block encabezado %} 
+
+{% endblock %}    
+
+
+<!-- CONTENIDO-->
+{% block contenido %}
+
+    <article class="col_4">
+
+    <h2>Registra un nuevo usuario</h2>
+    	<form id='newuserform' method='POST' action=''>
+    		{% csrf_token %}
+    		<table>{{newuserform}}</table>
+    		<p><input type="submit" value='Registrar'></p>
+    	</form>
+
+    </article>
+
+{% endblock %}
+
+
+
+
+{% block pie %}
+        <p>Todos los derechos reservados &copy; 2013 {{hora|date}}</p>
+{% endblock %}

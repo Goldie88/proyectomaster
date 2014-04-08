@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
+
+<!-- DRAOOMEDIA // Developed by draoomedia.com -->
+
+<!-- HEAD con las instrucciones  -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>{% block titulo %}{% endblock %}</title>
+
+    <meta name="description" content="{% block description %}{% endblock description %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+<!-- PROYECTOMASTER // Importar estilos CSS -->
+    {% load static from staticfiles %}
+        <link rel="stylesheet" href="{% static "css/normalize.css" %}" />
+        <link rel="stylesheet" href="{% static "css/xo.css" %}"/>
+        <link rel="stylesheet" href="{% static "css/estilos.css" %}"/>
+
+        <link rel="stylesheet" href="{% static "css/slimmenu.css" %}"/>
+        <link rel="stylesheet" href="{% static "css/columnal.css" %}"/>
+        <link rel="stylesheet" href="{% static "css/build.css" %}"/>
+
+        <link rel="stylesheet" href="{% static "css/respon.css" %}"/>
+        <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" />
+
+
+        
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<!--[if gte IE 9]>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"> </script>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">.gradient {filter: none;}</style>
+<![endif]-->
+</head>
+
+<!-- BODY -->
+<body>
+
+	<div id="container" class="container">
+
+        <header>
+            <img src="{% static "img/design/logo.png" %}"/>
+            {% block encabezado %}{% endblock %}
+        </header>
+
+		<nav>
+            <ul>
+                <li><a href="{% url index %}">Inicio</a></li>
+                <li><a href="{% url bienvenidos %}">Bienvenidos</a></li>
+                <li><a href="{% url servicios %}">Servicios</a></li>
+                <li><a href="{% url galeria %}">Galeria</a></li>
+                <li><a href="{% url contacto %}">Contacto</a></li>
+		</nav>
+
+		<!-- CONTENT --> 
+		<div id="content">
+        	{% block contenido %}{% endblock %}
+		</div>
+
+		<aside>
+		</aside>
+
+		<footer>
+            {% block footer %}{% endblock %}
+		</footer>
+
+	</div> <!-- Fin del container -->
+
+
+
+
+
+
+<!-- PROYECTOMASTER // Importar librerias Jquery -->
+        <script type="text/javascript">google.load("jquery", "1.6.2");</script>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script src="{% static "js/jquery.js" %}"></script>
+        <script src="{% static "js/modernizr.js" %}"></script>
+        <script src="{% static "js/jquery.slimmenu.js" %}"></script>
+        <script src="{% static "js/processing.js" %}"></script>
+        <script src="{% static "js/jquery.fullscreen.js" %}"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+    <!-- GOOGLE ANALITYCS-->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-00000000-0']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script> <!-- END GOODLE -->
+
+</body>
+
+
+</html>

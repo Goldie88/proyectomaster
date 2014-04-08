@@ -1,0 +1,38 @@
+<!-- TEMPLATE BASE-->
+{% extends 'base_userscontrols.html' %}
+
+<!-- TITULO DE LA PAGINA-->
+{% block titulo %} Login {% endblock %}
+
+<!-- DESCRIPCCION DE LA PAGINA -->
+{% block description %}
+Aqui la descripción correpondiente al link.
+{% endblock %}
+
+<!-- EL ENCABEZADO -->
+{% block encabezado %} 
+<hgroup> 
+<h2>Login</h2>
+<h3>Accede con tu usario y contraseña.</h3>
+</hgroup>
+{% endblock %}
+
+
+<!-- CONTENIDO-->
+{% block contenido %}
+	<section>
+		<article>
+			<h2>Titulo del contenido</h2>
+			<form id='loginform' method='post' action=''>
+				{% csrf_token %}
+				<table>{{loginform}}</table>
+			<p><input type='submit' value='Ingresar'/></p>
+	</form>
+		</article>
+	</section>
+{% endblock %}
+
+<!-- FOOTER-->
+{% block footer %}
+	<p>Pie de página</p>
+{% endblock %}
