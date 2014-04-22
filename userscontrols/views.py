@@ -9,14 +9,18 @@ from datetime import datetime
 # // GESTOR DE USUARIOS
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login as loginuser, authenticate, logout
+from django.contrib.auth import login as loginuser, authenticate, logout #Importante // "login as loginuser"
 from django.contrib.auth.decorators import login_required
 # My import
 from .models import *
 from .forms import *
 
-# Create your views here.
-########################## Views website.
+
+
+# Create your views here.------------------------------------------------------------------------->
+# Con @login_required para solicitar nombre y clave de usuario en areas restringidas.
+
+########################## HOME View.
 @login_required(login_url='login/')
 def home(request):
     usuario = request.user
@@ -41,7 +45,7 @@ def newuser(request):
     template = 'userscontrols/newuser.html'
     return render_to_response(template, ctx, context_instance=RequestContext(request))
 
-########################## LOGIN.
+########################## LOGIN View.
 def login(request):
     if not request.user.is_anonymous():
         return HttpResponseRedirect('/userscontrols')
@@ -64,7 +68,7 @@ def login(request):
         ctx = {'loginform':loginform}
     return render_to_response('userscontrols/login.html', ctx, context_instance=RequestContext(request))
 
-########################## LOGOUT.
+########################## LOGOUT View.
 @login_required(login_url='login/')
 def logout(request):
     logout(request)

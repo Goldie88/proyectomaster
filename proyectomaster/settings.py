@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
     # My apps.
     'apimonitors',
     'apps',
